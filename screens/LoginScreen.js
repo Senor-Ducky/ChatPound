@@ -1,15 +1,19 @@
 import * as React from 'react';
-import { Title, TextInput, Button } from 'react-native-paper'
-import { StyleSheet, View } from 'react-native';
+import { Title, TextInput, Button, Text } from 'react-native-paper'
+import { StyleSheet, View, Image } from 'react-native';
 
 import CustomRoundedButton from '../components/CustomRoundedButton';
 
-const HomeScreen = () => {
+const LoginScreen = () => {
     const [secureTextEntry, setSecureTextEntry] = React.useState(true);
 
     return(
         <>
             <View style={Style.container}>
+                <View style={Style.imageContainer}>
+                    <Image  resizeMethod='auto' resizeMode='contain' style={Style.logo} source={require('../assets/chat_pound.png')}/>
+                </View>
+
                 <Title style={Style.maintext} >Welcome To ChatPound !</Title>
 
                 <View style={Style.input_container}>
@@ -29,6 +33,7 @@ const HomeScreen = () => {
                     }} 
                     name='eye'/>}/>
                     <Button theme={{roundness: 20}} style={Style.authButtons} mode='contained' onPress={()=>{}}>Login</Button>
+                    <Text variant='bodySmall' style={{textAlign: 'center'}}> New User? Sign up below!</Text>
                     <Button theme={{roundness: 20}} style={Style.authButtons} mode='contained' onPress={()=>{}}>Sign Up</Button>
                 </View>
             </View>
@@ -55,14 +60,23 @@ const Style = StyleSheet.create({
     },
     input_container: {
         height: 100, 
-        marginBottom: 50
+        marginBottom: 200
     },
     authButtons: {
         margin: 12,
         marginLeft: 100,
         marginRight: 100,
         
+    },
+    logo: {
+        height: 150,
+    
+        
+    },
+    imageContainer: {
+        justifyContent: 'center',
+        alignItems: 'center',
     }
 })
 
-export default HomeScreen
+export default LoginScreen
