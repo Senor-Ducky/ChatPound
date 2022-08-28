@@ -4,7 +4,7 @@ import { StyleSheet, View, Image } from 'react-native';
 
 import CustomRoundedButton from '../components/CustomRoundedButton';
 
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
     const [secureTextEntry, setSecureTextEntry] = React.useState(true);
 
     return(
@@ -34,7 +34,7 @@ const LoginScreen = () => {
                     name='eye'/>}/>
                     <Button theme={{roundness: 20}} style={Style.authButtons} mode='contained' onPress={()=>{}}>Login</Button>
                     <Text variant='bodySmall' style={{textAlign: 'center'}}> New User? Sign up below!</Text>
-                    <Button theme={{roundness: 20}} style={Style.authButtons} mode='contained' onPress={()=>{}}>Sign Up</Button>
+                    <Button theme={{roundness: 20}} style={Style.authButtons} mode='contained' onPress={()=>{navigation.navigate('Register')}}>Sign Up</Button>
                 </View>
             </View>
         </>

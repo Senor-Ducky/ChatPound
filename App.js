@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 
 import LoginScreen from './screens/LoginScreen';
+import RegisterScreen from './screens/RegisterScreen';
 
 const theme = {
   ...DefaultTheme,
@@ -24,9 +25,15 @@ export default function App() {
         <NavigationContainer>
           <Stack.Navigator>
             <Stack.Screen
-            name="Home"
-            component={LoginScreen}
-            options={{headerShown: false}}/>
+              name="Login"
+              component={LoginScreen}
+              options={{headerShown: false}}
+            />
+
+            <Stack.Screen 
+              name="Register"
+              component={RegisterScreen}
+            />
           </Stack.Navigator>
         </NavigationContainer>
       </PaperProvider>
